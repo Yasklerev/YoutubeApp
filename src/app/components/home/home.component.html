@@ -1,1 +1,38 @@
-<p>home works!</p>
+<div class="row center-xs">
+  <div id="col" *ngFor="let item of videos" class="col-xs-4">
+    <div class="box">
+      <mat-card class="card-video">
+        <mat-card-title> {{ item.title }} </mat-card-title>
+        <mat-card-subtitle>
+          {{ item.channelTitle }} --- {{ item.publishedAt | date: "shortDate" }}
+        </mat-card-subtitle>
+        <img class="img-video" [src]="item.thumbnails.high.url" alt="" />
+        <mat-card-content *ngIf="item.description">
+          {{ item.description | slice: 0:100 }} ...
+        </mat-card-content>
+        <mat-card-content *ngIf="!item.description">
+          Este video no cuenta con una descripción.
+        </mat-card-content>
+        <mat-card-actions>
+          <button
+            class="button-video"
+            mat-raised-button
+            (click)="openDialog(item)"
+          >
+            Ver video
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<div class="row center-xs">
+  <div class="col-xs-12">
+    <div class="box">
+      <button (click)="loadVideos()" class="button-next-page" mat-raised-button>
+        Mostrar más videos
+      </button>
+    </div>
+  </div>
+</div>

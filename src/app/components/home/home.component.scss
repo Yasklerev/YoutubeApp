@@ -1,0 +1,43 @@
+.card-video {
+  height: 420px;
+  margin: 10px;
+  margin-top: 30px;
+  .img-video {
+    width: 80%;
+    margin: auto;
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  .button-video {
+    background-color: #ffffff;
+    color: black;
+    position: absolute;
+    bottom: 10px;
+    display: block;
+    margin-left: 35%;
+  }
+}
+
+.button-next-page {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 1700px) {
+  .card-video {
+    height: 490px;
+    .button-video {
+      margin-left: 40%;
+    }
+  }
+}
+
+@media only screen and (min-width: 2030px) {
+  .card-video {
+    height: 590px;
+    .button-video {
+      margin-left: 40%;
+    }
+  }
+}

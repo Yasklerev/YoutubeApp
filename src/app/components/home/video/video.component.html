@@ -1,0 +1,25 @@
+<div class="row center-xs-">
+  <div class="col-xs-12">
+    <div class="box">
+      <div class="content-video">
+        <h1>{{ data.title }}</h1>
+        <h4>{{ data.channelTitle }}</h4>
+      </div>
+      <iframe
+        width="560"
+        height="315"
+        [src]="urlVideo | domSeguro"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+
+      <div *ngIf="data.description" class="content-video">
+        {{ data.description }}
+      </div>
+      <div *ngIf="!data.description" class="content-video">
+        Este video no cuenta con una descripción.
+      </div>
+    </div>
+  </div>
+</div>
